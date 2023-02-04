@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 
-const CountButton = () => {
+const CountButton = (props) => {
+    console.log("component re-rendered" + " with props: " + props.incrementBy)
+
     const [currentCount, setCurrentCount] = useState(0)
 
     const handleClick = () => {
-        setCurrentCount(currentCount+1)
+        setCurrentCount(currentCount+props.incrementBy)
     }
-    console.log("component re-rendered")
 
     return <div>
-        <button onClick={handleClick}>Increment ++</button>
+        <button onClick={handleClick}>Increment + {props.incrementBy}</button>
         <div>Current Count: {currentCount}</div>
     </div>
 }

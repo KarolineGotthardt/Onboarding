@@ -5,7 +5,8 @@ const App = () => {
 
     return (
         <div>
-            <CountButton/>
+            <CountButton incrementBy={1}/>
+            <CountButton incrementBy={5}/>
         </div>
     )
 }
