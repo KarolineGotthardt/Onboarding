@@ -1,28 +1,20 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 
-const products = [
-    "tooth paste",
-    "tooth brush",
-    "mouth wash",
-    "dental floss",
-    "mouth guard"
-];
-
-const SearchBar = () => {
-    const [searchValue, setSearchValue] = useState("")
-    const shouldDisplayClearBtn = searchValue.length > 0
-    const filteredProducts = products.filter(
+const SearchBar = (props) => {
+    const [searchValue, setSearchValue] = useState("");
+    const shouldDisplayClearBtn = searchValue.length > 0;
+    const filteredProducts = props.products.filter(
         (product) => {return product.includes(searchValue)}
-    )
+    );
 
     const handleInputChange = (event) => {
         setSearchValue(event.target.value)
-    }
+    };
 
     const handleClearClick = () => {
         setSearchValue("")
-    }
+    };
 
     return (
         <div>
