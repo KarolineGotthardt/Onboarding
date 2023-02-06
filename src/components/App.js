@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import CountButton from "./CountButton/CountButton";
 
@@ -20,6 +20,16 @@ const plants = [
 
 const App = () => {
 
+    const [productsState, setProductsState] = useState([])
+
+    const loadedProducts = productsState.length > 0
+
+    useEffect(() => {
+        setTimeout(()=>{
+            setProductsState(plants)
+        }, 2000)
+    })
+
     return (
         <div>
             <CountButton
@@ -29,9 +39,8 @@ const App = () => {
             <br/>
             <br/>
             <div>Search a plant...</div>
-            <SearchBar
-                products={plants}
-            />
+            {loadedProducts ? <SearchBar products={productsState}/>: "Loading products..."}
+
         </div>
 
     )
