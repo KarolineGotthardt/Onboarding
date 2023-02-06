@@ -6,14 +6,20 @@ returns React Element in JSX (Combination of JavaScript & HTML Syntax) to render
  */
 function App() {
   const userName = "Karoline";
-  const organizationType = "Todo List";
+  const todoName = "Todo List";
+  const userTodos = [
+    "Water Plant",
+    "Watch React Tutorial",
+    "View Project Code",
+    "Ask for Adapter",
+  ];
 
   return (
     <div>
-      <h1>{`${userName}'s ${organizationType}`}</h1>
-      <Todo text="Water Plant" />
+      <h1>{`${userName}'s ${todoName}`}</h1>
+      <Todo text={userTodos[0]} />
       <br />
-      <Todo text="Learn React" />
+      <Todo text={userTodos[1]} />
       <br />
       <Todo text="View Project Code" />
       <br />
