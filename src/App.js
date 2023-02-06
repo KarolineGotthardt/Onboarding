@@ -8,13 +8,13 @@ function App() {
   return (
     <div>
       <h1>My Todos</h1>
-      <Todo />
+      <Todo text="Water Plant"/>
         <br/>
-      <Todo />
+      <Todo text="Learn React"/>
         <br/>
-      <Todo />
+      <Todo text="View Project Code"/>
         <br/>
-      <Todo />
+      <Todo text="Ask for Adapter"/>
     </div>
   );
 }
