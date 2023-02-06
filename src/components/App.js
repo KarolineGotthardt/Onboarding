@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import CountButton from "./CountButton/CountButton";
+import Button from "./Button/Button";
 
 const products = [
     "tooth paste",
@@ -40,10 +41,9 @@ const App = () => {
 
     return (
         <div>
-            <CountButton
-                incrementBy={2}
-                buttonColor="yellow"
-            />
+            <Button>SHOP</Button>
+            <br/>
+            <CountButton incrementBy={2} buttonColor="yellow"/>
             <br/>
             <br/>
             <div>Search a product...</div>
