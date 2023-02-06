@@ -1,5 +1,6 @@
 import React from "react";
 import SearchBar from "./SearchBar/SearchBar";
+import CountButton from "./CountButton/CountButton";
 
 const products = [
     "tooth paste",
@@ -12,15 +13,25 @@ const products = [
 const plants = [
     "Monstera",
     "Ivory",
-    "Calathea"
+    "Calathea",
+    "Palm",
+    "Orchid"
 ]
 
 const App = () => {
 
     return (
         <div>
-            <SearchBar products={products}/>
-            <SearchBar products={plants}/>
+            <CountButton
+                incrementBy={2}
+                buttonColor="yellow"
+            />
+            <br/>
+            <br/>
+            <div>Search a plant...</div>
+            <SearchBar
+                products={plants}
+            />
         </div>
 
     )
