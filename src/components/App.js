@@ -25,9 +25,17 @@ const App = () => {
     const loadedProducts = productsState.length > 0
 
     useEffect(() => {
-        setTimeout(()=>{
-            setProductsState(plants)
-        }, 2000)
+
+        fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())
+            .then(
+                (shopProducts)=>{
+                    const newProductsState = shopProducts.map((shopProduct) => {
+                        return shopProduct.title
+                    })
+                    setProductsState(newProductsState)
+                }
+            )
     })
 
     return (
@@ -38,7 +46,7 @@ const App = () => {
             />
             <br/>
             <br/>
-            <div>Search a plant...</div>
+            <div>Search a product...</div>
             {loadedProducts ? <SearchBar products={productsState}/>: "Loading products..."}
 
         </div>
