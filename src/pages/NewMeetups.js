@@ -11,7 +11,7 @@ function NewMeetups() {
     const fullRequestUrl = `${requestUrl}${requestMeetupsTable}.json`;
 
     console.log(
-      `Sending HTTP Request to Backend Firebase Test-server at ${fullRequestUrl}: ${meetupData}`
+      `Sending HTTP POST Request to Backend Firebase Test-server at ${fullRequestUrl}: ${meetupData}`
     );
     fetch(fullRequestUrl, {
       method: "POST",
