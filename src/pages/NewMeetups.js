@@ -1,6 +1,9 @@
 import NewMeetupForm from "../components/meetups/NewMeetupForm";
+import { useNavigate } from "react-router-dom";
 
 function NewMeetups() {
+  const navigate = useNavigate();
+
   function addMeetup(meetupData) {
     const requestUrl =
       "https://react-academind-839df-default-rtdb.firebaseio.com/";
@@ -13,9 +16,11 @@ function NewMeetups() {
     fetch(fullRequestUrl, {
       method: "POST",
       body: JSON.stringify(meetupData),
-        headers: {
-          "Content-Type": "application/json"
-        }
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then(() => {
+      navigate("/", { replace: true });
     });
   }
 
