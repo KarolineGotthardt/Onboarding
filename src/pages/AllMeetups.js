@@ -24,7 +24,6 @@ const DUMMY_DATA = [
 function AllMeetups() {
   return (
     <div>
-      All Meetups Page
       <MeetupList meetups={DUMMY_DATA}/>
     </div>
   );
