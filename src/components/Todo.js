@@ -11,8 +11,8 @@ function Todo(props) {
     setIsModalOpen(true);
   }
 
-  function closeModal(){
-      setIsModalOpen(false)
+  function closeModal() {
+    setIsModalOpen(false);
   }
 
   return (
@@ -23,8 +23,8 @@ function Todo(props) {
           {btnText}
         </button>
       </div>
-      {isModalOpen && <Modal onClick={closeModal}/>}
-      {isModalOpen && <Backdrop onClick={closeModal}/>}
+      {isModalOpen && <Modal onClick={closeModal} />}
+      {isModalOpen && <Backdrop onClick={closeModal} />}
     </div>
   );
 }
