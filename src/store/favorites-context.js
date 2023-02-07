@@ -12,6 +12,22 @@ function FavoritesContextProvider(props) {
     favoritesCount: userFavorites.length,
   };
 
+  function addToFavorites(newFavorite) {
+    setUserFavorites((prevUserFavorites) => {
+      return prevUserFavorites.concat(newFavorite);
+    });
+  }
+
+  function removeFromFavorites(meetupId) {
+    setUserFavorites((prevUserFavorites) => {
+      return prevUserFavorites.filter((meetup) => meetup.id !== meetupId);
+    });
+  }
+
+  function checkIfFavorite(meetupId) {
+    return userFavorites.some((meetup) => meetup.id === meetupId);
+  }
+
   return (
     <FavoritesContext.Provider value={context}>
       {props.children}
