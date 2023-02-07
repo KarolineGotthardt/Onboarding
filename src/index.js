@@ -1,16 +1,19 @@
-import React from 'react';
+import React from "react";
 import ReactDOM from "react-dom";
-import {BrowserRouter} from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import { FavoritesContextProvider } from "./store/favorites-context";
 
-import './index.css';
-import App from './App';
+import "./index.css";
+import App from "./App";
 
 /*
 Wrap App Component with Router Component to add routing
  */
 ReactDOM.render(
+  <FavoritesContextProvider>
     <BrowserRouter>
-        <App/>
-    </BrowserRouter>,
-    document.getElementById("root")
+      <App />
+    </BrowserRouter>
+  </FavoritesContextProvider>,
+  document.getElementById("root")
 );
