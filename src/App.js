@@ -1,29 +1,20 @@
-import Todo from "./components/Todo";
+import { Route, Routes } from "react-router-dom";
+import AllMeetups from "./pages/AllMeetups";
+import NewMeetups from "./pages/NewMeetups";
+import Favorites from "./pages/Favorites";
 
-/*
-React Component
-returns React Element in JSX (Combination of JavaScript & HTML Syntax) to render what you see in the browser
- */
 function App() {
-  const userName = "Karoline";
-  const todoName = "Todo List";
-  const userTodos = [
-    "Water Plant",
-    "Watch React Tutorial",
-    "View Project Code",
-    "Ask for Adapter",
-  ];
+  /*
+    domain: localhost:3000
+     */
 
   return (
     <div>
-      <h1>{`${userName}'s ${todoName}`}</h1>
-      <Todo text={userTodos[0]} />
-      <br />
-      <Todo text={userTodos[1]} />
-      <br />
-      <Todo text="View Project Code" />
-      <br />
-      <Todo text="Ask for Adapter" />
+      <Routes>
+        <Route path="/" element={<AllMeetups />} />
+        <Route path="/new-meetup" element={<NewMeetups />} />
+        <Route path="/favorites" element={<Favorites />} />
+      </Routes>
     </div>
   );
 }
